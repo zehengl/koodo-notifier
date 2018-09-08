@@ -38,3 +38,7 @@ Setup
 3. Set a daily cron job
 
 All set!
+
+You should get a daily text message like the one below.
+
+![example](https://github.com/zehengl/koodo-notifier/blob/master/example.jpg)
