@@ -1,23 +1,20 @@
 from setuptools import setup, find_packages
 
+from koodo_notifier import VERSION
+
 setup(
-    name='koodo-notifier',
-    version='0.1.0',
+    name="koodo-notifier",
+    version=VERSION,
     packages=find_packages(),
-    install_requires=['boto3', 'selenium'],
-    setup_requires=[
-        'pytest-runner',
-    ],
-    tests_require=[
-        'pytest',
-        'rollbar'
-    ],
-    test_suite='tests',
-    author='Zeheng Li',
-    author_email='imzehengl@gmail.com',
-    maintainer='Zeheng Li',
-    maintainer_email='imzehengl@gmail.com',
-    description='A koodo usage notifier',
-    license='MIT',
-    url='https://github.com/zehengl/koodo-notifier',
+    install_requires=[],
+    setup_requires=["pytest-runner"],
+    tests_require=["boto3", "pytest", "rollbar", "selenium"],
+    test_suite="tests",
+    author="Zeheng Li",
+    author_email="imzehengl@gmail.com",
+    maintainer="Zeheng Li",
+    maintainer_email="imzehengl@gmail.com",
+    description="A Koodo Usage Notifier",
+    license="MIT",
+    url="https://github.com/zehengl/koodo-notifier",
 )

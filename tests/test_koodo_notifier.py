@@ -1,17 +1,20 @@
-from datetime import datetime
 import os
+from datetime import datetime
 
 import boto3
 import rollbar
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 url_my_acct = "https://www.koodomobile.com/my-account"
 
 
-def test_toodo_notifier():
+def test_koodo_notifier():
+    """
+    test for Koodo Notifier
+    """
 
     username = os.getenv("username")
     password = os.getenv("password")
@@ -56,26 +59,31 @@ def test_toodo_notifier():
 
         driver.execute_script("arguments[0].click()", _login)
 
-        [phone_number, account_number] = [
-            e.text
-            for e in driver.find_elements_by_class_name(
-                "overview-card-details-sub-title"
+        _accounts = WebDriverWait(driver, wait_time).until(
+            EC.presence_of_all_elements_located(
+                (By.CLASS_NAME, "overview-card-details-sub-title")
             )
-        ]
+        )
 
-        urls = driver.find_elements_by_class_name("overview-card-link")
+        [phone_number, account_number] = [e.text for e in _accounts]
 
-        url_usage = urls[0].get_attribute("href")
+        _urls = WebDriverWait(driver, wait_time).until(
+            EC.presence_of_all_elements_located((By.CLASS_NAME, "overview-card-link"))
+        )
+
+        url_usage = _urls[0].get_attribute("href")
 
         driver.get(url_usage)
 
-        usage_cards = [
-            e.text for e in driver.find_elements_by_class_name("usage-card-info")
-        ]
+        _usage_cards = WebDriverWait(driver, wait_time).until(
+            EC.presence_of_all_elements_located((By.CLASS_NAME, "usage-card-info"))
+        )
 
-        message = "\n".join([(" ").join(e.split("\n")[:3]) for e in usage_cards])
+        usage_cards = [e.text for e in _usage_cards]
 
-        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        message = "\n".join([" ".join(e.split("\n")[:3]) for e in usage_cards])
+
+        now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
         message = f"{account_number}\n{message}\nAs of {now}"
 
         client = boto3.client(
