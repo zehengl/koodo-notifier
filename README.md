@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/zehengl/koodo-notifier.svg?branch=master)](https://travis-ci.org/zehengl/koodo-notifier)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
-An SMS Notifier for Koodo Usage
+An SMS Notifier for Koodo Usage, with a similar idea to [rrfortune](https://github.com/zehengl/rrfortune)
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Assuming you have access the following services
 ### Rollbar
 
 1. Create a new project
-2. Markdown the rollbal key
+2. Markdown the access token (rollbar key)
 
 ### GitHub
 
