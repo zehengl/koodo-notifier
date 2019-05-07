@@ -8,7 +8,7 @@ setup(
     packages=find_packages(),
     install_requires=[],
     setup_requires=["pytest-runner"],
-    tests_require=["boto3", "pytest", "rollbar", "selenium"],
+    tests_require=["boto3", "pytest", "rollbar", "selenium", "urllib3==1.24.3"],
     test_suite="tests",
     author="Zeheng Li",
     author_email="imzehengl@gmail.com",
