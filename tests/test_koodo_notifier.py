@@ -41,14 +41,18 @@ def test_koodo_notifier():
 
         driver.get(url_my_acct)
 
+        xpath_username = '//*[@id="idtoken1"]'
+        xpath_password = '//*[@id="idtoken2"]'
+        xpath_login = '//*[@id="login"]/div[2]/div[4]/button'
+
         _username = WebDriverWait(driver, wait_time).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="idtoken1"]'))
+            EC.presence_of_element_located((By.XPATH, xpath_username))
         )
         _password = WebDriverWait(driver, wait_time).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="idtoken2"]'))
+            EC.presence_of_element_located((By.XPATH, xpath_password))
         )
         _login = WebDriverWait(driver, wait_time).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="login"]/div[2]/div[4]/button'))
+            EC.presence_of_element_located((By.XPATH, xpath_login))
         )
 
         _username.clear()
