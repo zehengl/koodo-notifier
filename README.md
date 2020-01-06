@@ -4,7 +4,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 [![time tracker](https://wakatime.com/badge/github/zehengl/koodo-notifier.svg)](https://wakatime.com/badge/github/zehengl/koodo-notifier)
 
-An SMS Notifier for Koodo Usage, with a similar idea to [rrfortune](https://github.com/zehengl/rrfortune)
+A Koodomobile usage notifier, with a similar idea to [rrfortune](https://github.com/zehengl/rrfortune)
 
 ## Prerequisites
 
