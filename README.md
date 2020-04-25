@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Smartphone-Message-512.png" alt="logo" height="196">
+</div>
+
 # koodo-notifier
 
 [![Build Status](https://travis-ci.org/zehengl/koodo-notifier.svg?branch=master)](https://travis-ci.org/zehengl/koodo-notifier)
@@ -71,3 +75,16 @@ Run test
     pip install -U pip
     pip install -r requirements-dev.txt
     pytest
+
+<hr>
+
+<sup>
+
+## Credits
+
+- [Icon][1] by [Webalys LLC][2]
+
+</sup>
+
+[1]: https://www.iconfinder.com/icons/379394/message_smartphone_icon
+[2]: https://www.iconfinder.com/webalys
